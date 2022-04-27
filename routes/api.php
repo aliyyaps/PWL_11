@@ -24,4 +24,6 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
+    // Praktikum 2 (Langkah 14) - Added Route Resource
+    Route::apiResource('/todos', TodoController::class);
 });
