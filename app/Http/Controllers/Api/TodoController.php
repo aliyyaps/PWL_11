@@ -11,9 +11,7 @@ use Illuminate\Http\Response;
 
 class TodoController extends Controller
 {
-    // Praktikum 2 (Langkah 12) - Added Trait ApiResponse
     use ApiResponse;
-
     /**
      * Display a listing of the resource.
      *
@@ -34,7 +32,7 @@ class TodoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TodoRequest $request)
     {
         $request->validated();
 
@@ -64,7 +62,7 @@ class TodoController extends Controller
      * @param  \App\Models\Todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Todo $todo)
+    public function update(TodoRequest $request, Todo $todo)
     {
         $request->validated();
         $todo->todo = $request->todo;
