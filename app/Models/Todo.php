@@ -22,11 +22,11 @@ class Todo extends Model
     ];
 
     protected $casts = [
-        'done',
+        'done' => 'boolean',
     ];
 
     public function user()
     {
-        return $this->belongsTo((User::class));
+        return $this->belongsTo(User::class);
     }
 }
