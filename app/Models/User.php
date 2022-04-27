@@ -43,7 +43,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // Praktikum 2 (Langkah 6) - Menambahkan Fungsi Todos
     public function todos()
     {
         return $this->hasMany(Todo::class);
